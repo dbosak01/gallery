@@ -1,3 +1,3 @@
-# gallery (development version)
+# gallery 1.0.0
 
-* Added a `NEWS.md` file to track changes to the package.
+* Moved examples from *sassy* packages here to reduce size.
