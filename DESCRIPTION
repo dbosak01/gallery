@@ -12,6 +12,10 @@ Description: A collection of examples for the SASSY
     such examples to be moved out of the source packages.
 License: CC0
 URL: https://gallery.r-sassy.org, https://github.com/dbosak01/gallery
+Depends: R (>= 4.1.0)
+Suggests: 
+    knitr,
+    rmarkdown
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
