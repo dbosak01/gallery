@@ -1,3 +1,3 @@
-# gallery 1.0.0
+# gallery 1.3.1
 
 * Moved examples from *sassy* packages here to reduce size.
