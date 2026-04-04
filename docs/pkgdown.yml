@@ -1,0 +1,25 @@
+pandoc: 3.6.3
+pkgdown: 2.1.0
+pkgdown_sha: ~
+articles:
+  gallery: gallery.html
+  sassy-ae: sassy-ae.html
+  sassy-ae2: sassy-ae2.html
+  sassy-chgbase: sassy-chgbase.html
+  sassy-dm: sassy-dm.html
+  sassy-ds: sassy-ds.html
+  sassy-figure: sassy-figure.html
+  sassy-figureby: sassy-figureby.html
+  sassy-forest: sassy-forest.html
+  sassy-intext: sassy-intext.html
+  sassy-listing: sassy-listing.html
+  sassy-pfigure: sassy-pfigure.html
+  sassy-plisting: sassy-plisting.html
+  sassy-profile: sassy-profile.html
+  sassy-shift: sassy-shift.html
+  sassy-survival: sassy-survival.html
+  sassy-vs: sassy-vs.html
+last_built: 2026-04-04T22:45Z
+urls:
+  reference: https://gallery.r-sassy.org/reference
+  article: https://gallery.r-sassy.org/articles
