@@ -6,12 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Example 5: Vital Signs Table • gallery</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
+<!-- favicons --><link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -38,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gallery</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.3</span>
       </span>
     </div>
 
@@ -99,6 +98,12 @@
     </li>
     <li>
       <a href="../articles/sassy-shift.html">Example 16: Shift Table</a>
+    </li>
+    <li>
+      <a href="../articles/sassy-macro.html">Example 17: Macro Program</a>
+    </li>
+    <li>
+      <a href="../articles/sassy-simsun.html">Example 18: Chinese Font</a>
     </li>
   </ul>
 </li>
@@ -179,24 +184,24 @@ worlds!</li>
 <span></span>
 <span><span class="fu">put</span><span class="op">(</span><span class="st">"Join and prepare data"</span><span class="op">)</span></span>
 <span><span class="va">prep</span> <span class="op">&lt;-</span> <span class="va">sdtm</span><span class="op">$</span><span class="va">DM</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">sdtm</span><span class="op">$</span><span class="va">VS</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"USUBJID"</span> <span class="op">=</span> <span class="st">"USUBJID"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">VSTESTCD</span>, <span class="va">VISIT</span>, <span class="va">VISITNUM</span>, <span class="va">VSSTRESN</span>, <span class="va">ARM</span>, <span class="va">VSBLFL</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">VSTESTCD</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PULSE"</span>, <span class="st">"RESP"</span>, <span class="st">"TEMP"</span>, <span class="st">"DIABP"</span>, <span class="st">"SYSBP"</span><span class="op">)</span>, </span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">sdtm</span><span class="op">$</span><span class="va">VS</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"USUBJID"</span> <span class="op">=</span> <span class="st">"USUBJID"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">VSTESTCD</span>, <span class="va">VISIT</span>, <span class="va">VISITNUM</span>, <span class="va">VSSTRESN</span>, <span class="va">ARM</span>, <span class="va">VSBLFL</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">VSTESTCD</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PULSE"</span>, <span class="st">"RESP"</span>, <span class="st">"TEMP"</span>, <span class="st">"DIABP"</span>, <span class="st">"SYSBP"</span><span class="op">)</span>, </span>
 <span>         <span class="op">!</span><span class="op">(</span><span class="va">VISIT</span> <span class="op">==</span> <span class="st">"SCREENING"</span> <span class="op">&amp;</span> <span class="va">VSBLFL</span> <span class="op">!=</span> <span class="st">"Y"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">VSTESTCD</span>, <span class="va">VISITNUM</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">VSTESTCD</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">VSTESTCD</span>, <span class="va">VISITNUM</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">VSTESTCD</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">datastep</span><span class="op">(</span>retain <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>BSTRESN <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>, <span class="op">{</span></span>
 <span>    </span>
 <span>    <span class="co"># Combine treatment groups</span></span>
 <span>    <span class="co"># And distingish baseline time points</span></span>
 <span>    <span class="kw">if</span> <span class="op">(</span><span class="va">ARM</span> <span class="op">==</span> <span class="st">"ARM A"</span><span class="op">)</span> <span class="op">{</span></span>
-<span>      <span class="kw">if</span> <span class="op">(</span><span class="va">VSBLFL</span> <span class="op">%eq%</span> <span class="st">"Y"</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="kw">if</span> <span class="op">(</span><span class="va">VSBLFL</span> <span class="op"><a href="https://common.r-sassy.org/reference/grapes-eq-grapes.html" class="external-link">%eq%</a></span> <span class="st">"Y"</span><span class="op">)</span> <span class="op">{</span></span>
 <span>        <span class="va">GRP</span> <span class="op">&lt;-</span> <span class="st">"A_BASE"</span></span>
 <span>      <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
 <span>        <span class="va">GRP</span> <span class="op">&lt;-</span> <span class="st">"A_TRT"</span></span>
 <span>      <span class="op">}</span></span>
 <span>    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>      <span class="kw">if</span> <span class="op">(</span><span class="va">VSBLFL</span> <span class="op">%eq%</span> <span class="st">"Y"</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="kw">if</span> <span class="op">(</span><span class="va">VSBLFL</span> <span class="op"><a href="https://common.r-sassy.org/reference/grapes-eq-grapes.html" class="external-link">%eq%</a></span> <span class="st">"Y"</span><span class="op">)</span> <span class="op">{</span></span>
 <span>        <span class="va">GRP</span> <span class="op">&lt;-</span> <span class="st">"O_BASE"</span></span>
 <span>      <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
 <span>        <span class="va">GRP</span> <span class="op">&lt;-</span> <span class="st">"O_TRT"</span></span>
@@ -208,27 +213,27 @@ worlds!</li>
 <span>      <span class="va">BSTRESN</span> <span class="op">=</span> <span class="va">VSSTRESN</span></span>
 <span>    </span>
 <span>  <span class="op">}</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> </span>
 <span></span>
 <span><span class="fu">put</span><span class="op">(</span><span class="st">"Get population counts"</span><span class="op">)</span></span>
-<span><span class="va">pop_A</span> <span class="op">&lt;-</span> <span class="va">prep</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">GRP</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">GRP</span> <span class="op">==</span> <span class="st">"A_BASE"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/enframe.html" class="external-link">deframe</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">put</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">pop_O</span> <span class="op">&lt;-</span> <span class="va">prep</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">GRP</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">GRP</span> <span class="op">==</span> <span class="st">"O_BASE"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/enframe.html" class="external-link">deframe</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">put</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">pop_A</span> <span class="op">&lt;-</span> <span class="va">prep</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">GRP</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">GRP</span> <span class="op">==</span> <span class="st">"A_BASE"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">distinct</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">count</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">deframe</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">put</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">pop_O</span> <span class="op">&lt;-</span> <span class="va">prep</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">GRP</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">GRP</span> <span class="op">==</span> <span class="st">"O_BASE"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">distinct</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">count</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">deframe</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">put</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">put</span><span class="op">(</span><span class="st">"Prepare final data frame"</span><span class="op">)</span></span>
 <span><span class="va">final</span> <span class="op">&lt;-</span> <span class="va">prep</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="va">GRP</span>, <span class="va">VSSTRESN</span>, <span class="va">BSTRESN</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="va">GRP</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span>Mean <span class="op">=</span> <span class="fu">fmt_mean_sd</span><span class="op">(</span><span class="va">VSSTRESN</span><span class="op">)</span>,</span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="va">GRP</span>, <span class="va">VSSTRESN</span>, <span class="va">BSTRESN</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="va">GRP</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarize</span><span class="op">(</span>Mean <span class="op">=</span> <span class="fu">fmt_mean_sd</span><span class="op">(</span><span class="va">VSSTRESN</span><span class="op">)</span>,</span>
 <span>            Median <span class="op">=</span> <span class="fu">fmt_median</span><span class="op">(</span><span class="va">VSSTRESN</span><span class="op">)</span>,</span>
 <span>            Quantiles <span class="op">=</span> <span class="fu">fmt_quantile_range</span><span class="op">(</span><span class="va">VSSTRESN</span><span class="op">)</span>,</span>
 <span>            Range <span class="op">=</span> <span class="fu">fmt_range</span><span class="op">(</span><span class="va">VSSTRESN</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html" class="external-link">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">Mean</span>, <span class="va">Median</span>, <span class="va">Quantiles</span>, <span class="va">Range</span><span class="op">)</span>,</span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">Mean</span>, <span class="va">Median</span>, <span class="va">Quantiles</span>, <span class="va">Range</span><span class="op">)</span>,</span>
 <span>               names_to <span class="op">=</span> <span class="st">"stats"</span>,</span>
 <span>               values_to <span class="op">=</span> <span class="st">"values"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">GRP</span>,</span>
+<span>  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">GRP</span>,</span>
 <span>              values_from <span class="op">=</span> <span class="va">values</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">put</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -253,36 +258,36 @@ worlds!</li>
 <span></span>
 <span><span class="co"># Apply sort</span></span>
 <span><span class="va">final</span> <span class="op">&lt;-</span> <span class="va">final</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>VSTESTCD <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">VSTESTCD</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">vs_fmt</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">VSTESTCD</span><span class="op">)</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>VSTESTCD <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">VSTESTCD</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">vs_fmt</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">VSTESTCD</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Define table object</span></span>
-<span><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu">create_table</span><span class="op">(</span><span class="va">final</span>, borders <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">spanning_header</span><span class="op">(</span><span class="va">A_BASE</span>, <span class="va">A_TRT</span>, <span class="st">"Placebo"</span>, n <span class="op">=</span> <span class="va">pop_A</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">spanning_header</span><span class="op">(</span><span class="va">O_BASE</span>, <span class="va">O_TRT</span>, <span class="st">"Treated"</span>, n <span class="op">=</span> <span class="va">pop_O</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">column_defaults</span><span class="op">(</span>width <span class="op">=</span> <span class="fl">1.25</span>, align <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">stub</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="va">stats</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">2.5</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">define</span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="st">"Vital Sign"</span>, format <span class="op">=</span> <span class="va">vs_fmt</span>, </span>
+<span><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://reporter.r-sassy.org/reference/create_table.html" class="external-link">create_table</a></span><span class="op">(</span><span class="va">final</span>, borders <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/spanning_header.html" class="external-link">spanning_header</a></span><span class="op">(</span><span class="va">A_BASE</span>, <span class="va">A_TRT</span>, <span class="st">"Placebo"</span>, n <span class="op">=</span> <span class="va">pop_A</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/spanning_header.html" class="external-link">spanning_header</a></span><span class="op">(</span><span class="va">O_BASE</span>, <span class="va">O_TRT</span>, <span class="st">"Treated"</span>, n <span class="op">=</span> <span class="va">pop_O</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/column_defaults.html" class="external-link">column_defaults</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">1.25</span>, align <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/stub.html" class="external-link">stub</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="va">stats</span><span class="op">)</span>, width <span class="op">=</span> <span class="fl">2.5</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/define.html" class="external-link">define</a></span><span class="op">(</span><span class="va">VSTESTCD</span>, <span class="st">"Vital Sign"</span>, format <span class="op">=</span> <span class="va">vs_fmt</span>, </span>
 <span>         blank_after <span class="op">=</span> <span class="cn">TRUE</span>, dedupe <span class="op">=</span> <span class="cn">TRUE</span>, label_row <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">define</span><span class="op">(</span><span class="va">stats</span>, indent <span class="op">=</span> <span class="fl">.25</span>, format <span class="op">=</span> <span class="va">stat_fmt</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">define</span><span class="op">(</span><span class="va">A_BASE</span>, <span class="st">"Baseline"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">define</span><span class="op">(</span><span class="va">A_TRT</span>, <span class="st">"After Treatment"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">define</span><span class="op">(</span><span class="va">O_BASE</span>, <span class="st">"Baseline"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">define</span><span class="op">(</span><span class="va">O_TRT</span>, <span class="st">"After Treatment"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/define.html" class="external-link">define</a></span><span class="op">(</span><span class="va">stats</span>, indent <span class="op">=</span> <span class="fl">.25</span>, format <span class="op">=</span> <span class="va">stat_fmt</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/define.html" class="external-link">define</a></span><span class="op">(</span><span class="va">A_BASE</span>, <span class="st">"Baseline"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/define.html" class="external-link">define</a></span><span class="op">(</span><span class="va">A_TRT</span>, <span class="st">"After Treatment"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/define.html" class="external-link">define</a></span><span class="op">(</span><span class="va">O_BASE</span>, <span class="st">"Baseline"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/define.html" class="external-link">define</a></span><span class="op">(</span><span class="va">O_TRT</span>, <span class="st">"After Treatment"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Construct output path</span></span>
 <span><span class="va">pth</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">tmp</span>, <span class="st">"output/t_vs.pdf"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Define report object</span></span>
-<span><span class="va">rpt</span> <span class="op">&lt;-</span> <span class="fu">create_report</span><span class="op">(</span><span class="va">pth</span>, output_type <span class="op">=</span> <span class="st">"PDF"</span>, font <span class="op">=</span> <span class="st">"Times"</span>, </span>
+<span><span class="va">rpt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://reporter.r-sassy.org/reference/create_report.html" class="external-link">create_report</a></span><span class="op">(</span><span class="va">pth</span>, output_type <span class="op">=</span> <span class="st">"PDF"</span>, font <span class="op">=</span> <span class="st">"Times"</span>, </span>
 <span>                     font_size <span class="op">=</span> <span class="fl">11</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">page_header</span><span class="op">(</span><span class="st">"Sponsor: Company"</span>, <span class="st">"Study: ABC"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">titles</span><span class="op">(</span><span class="st">"Table 4.0"</span>, <span class="st">"Selected Vital Signs"</span>, bold <span class="op">=</span> <span class="cn">TRUE</span>, font_size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">add_content</span><span class="op">(</span><span class="va">tbl</span>, align <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">page_footer</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"CONFIDENTIAL"</span>, <span class="st">"Page [pg] of [tpg]"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/page_header.html" class="external-link">page_header</a></span><span class="op">(</span><span class="st">"Sponsor: Company"</span>, <span class="st">"Study: ABC"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/titles.html" class="external-link">titles</a></span><span class="op">(</span><span class="st">"Table 4.0"</span>, <span class="st">"Selected Vital Signs"</span>, bold <span class="op">=</span> <span class="cn">TRUE</span>, font_size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/add_content.html" class="external-link">add_content</a></span><span class="op">(</span><span class="va">tbl</span>, align <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://reporter.r-sassy.org/reference/page_footer.html" class="external-link">page_footer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"CONFIDENTIAL"</span>, <span class="st">"Page [pg] of [tpg]"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Write report to file system  </span></span>
-<span><span class="fu">write_report</span><span class="op">(</span><span class="va">rpt</span><span class="op">)</span> </span>
+<span><span class="fu"><a href="https://reporter.r-sassy.org/reference/write_report.html" class="external-link">write_report</a></span><span class="op">(</span><span class="va">rpt</span><span class="op">)</span> </span>
 <span></span>
 <span><span class="co"># Close log</span></span>
 <span><span class="fu">log_close</span><span class="op">(</span><span class="op">)</span></span>
@@ -499,7 +504,7 @@ Group</a></p>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
       </footer>

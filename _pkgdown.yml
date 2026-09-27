@@ -22,6 +22,8 @@ articles:
   - sassy-ae2
   - sassy-intext
   - sassy-shift
+  - sassy-macro
+  - sassy-simsun
 
 navbar:
   type: inverse
