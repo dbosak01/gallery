@@ -24,6 +24,7 @@ articles:
   - sassy-shift
   - sassy-macro
   - sassy-simsun
+  - sassy-waterfall
 
 navbar:
   type: inverse
